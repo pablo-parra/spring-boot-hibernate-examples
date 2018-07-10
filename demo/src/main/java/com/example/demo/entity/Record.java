@@ -2,6 +2,7 @@ package com.example.demo.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,7 +34,7 @@ public class Record implements Serializable {
 
   private String year;
 
-  @ManyToOne
+  @ManyToOne(cascade = { CascadeType.ALL })
   @JoinColumn(name = "band_ref")
   @JsonIgnore
   private Band band;

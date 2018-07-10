@@ -38,7 +38,7 @@ public class DataController {
   @RequestMapping(value = "/saveLabel", method = RequestMethod.POST)
   public @ResponseBody ResponseEntity<?> saveLabel(@RequestBody Label label) {
 
-    this.datamanagement.saveLabel(labelMapping(label));
+    Label savedLabel = this.datamanagement.saveLabel(labelMapping(label));
     return ResponseEntity.noContent().build();
   }
 

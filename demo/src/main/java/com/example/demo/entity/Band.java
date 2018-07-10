@@ -37,10 +37,10 @@ public class Band implements Serializable {
 
   private String style;
 
-  @OneToMany(mappedBy = "band", cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "band", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Record> records = new ArrayList<>();
 
-  @ManyToOne
+  @ManyToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "label_ref")
   @JsonIgnore
   private Label label;
